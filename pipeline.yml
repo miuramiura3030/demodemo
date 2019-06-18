@@ -1,0 +1,15 @@
+---
+resources:
+- name: demo_resource
+  type: git
+  source:
+    uri: https://github.com/miuramiura3030/demodemo.git
+    branch: master
+
+jobs:
+- name: hello-world2
+  public: true
+  plan:
+  - get: demo_resource
+  - task: hello-world2
+    file: demo_resource/hellodemo.yml
